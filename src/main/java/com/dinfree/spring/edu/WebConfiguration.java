@@ -19,7 +19,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter{
         registrationBean.addUrlMappings("/console/*");
         return registrationBean;
     }
-    
+
     //TODO: 페이지 설정 부분인데 보강 필요.
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {

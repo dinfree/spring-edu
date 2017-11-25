@@ -2,8 +2,6 @@ package com.dinfree.spring.edu.simpledata;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +16,18 @@ public class SimpleDBRestCtl {
 	@RequestMapping("/simple/add")
 	public SimpleData add(SimpleData sd) {
 		SimpleData data = sdao.save(sd);
+		return data;
+	}
+	
+	@RequestMapping("/simple/update")
+	public SimpleData update(SimpleData sd) {
+		SimpleData data = sdao.save(sd);
+		return data;
+	}
+	
+	@RequestMapping("/simple/{id}")
+	public SimpleData get(@PathVariable int id, Model model) {
+		SimpleData data = sdao.findOne(id);
 		return data;
 	}
 	

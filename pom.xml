@@ -4,7 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.dinfree.spring.edu</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>AddrServer</artifactId>
+	<version>0.5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>spring-edu-project</name>
@@ -24,6 +25,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 <!-- jsp, tomcat, jstl -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,6 +75,16 @@
 			<artifactId>jquery</artifactId>
 			<version>2.1.4</version>
 		</dependency>
+<dependency>
+    <groupId>com.github.stefanbirkner</groupId>
+    <artifactId>system-rules</artifactId>
+    <version>1.16.1</version>
+</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.192</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -79,7 +95,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-	<artifactId>project</artifactId>
 </project>
