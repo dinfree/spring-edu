@@ -48,6 +48,7 @@
 	
 ### Addressbook Project
 	*### JSP 버전
+	    * github clone으로 프로젝트 import 할때 maven project 로 생성함.
 		* 기존 교재 주소록 프로젝트의 jsp 를 기본적으로 활용함.
 		* 링크 url 정리 필요.
 		* JSP 빈즈 사용과 관련된 코드 제거, 기존 컨트롤러 파일 제거 및 컨트롤러 링크 재구성
