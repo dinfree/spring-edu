@@ -97,8 +97,32 @@ DAO 클래스로 Spring Data JPA 를 사용해 H2 데이터베이스와 연동�
 - @PostMapping: HTTP Post 요청(예를들명 form submit)을 처리하기 위한 애너테이션
 
 ### Demo 프로젝트: Restful web service
+스프링에서 Restful 웹서비스를 구현하기 위한 방법을 알아 본다. simpledata 패키지의 소스를 보도로 한다.
 
-### Demo 프로젝트: Spring Data Rest with HAL Browser
+#### Entity Class
+- SimpleData 및 SimpleDataDAO 인터페이스, 내용은 앞에서와 동일함. DAO의 경우 별도 메서드 정의 없이 제공되는 메서드만 사용.
+
+#### Rest Controller
+- SimpleDBRestCtl 클래스
+- @RestController: Restful 서비스를 제공하기 위한 컨트롤러 클래스임을 선언.
+
+#### 동작 테스트
+웹브라우저 혹은 Postman(권장), 내장 HTTP Client(Deprecated 됨. 에디터기반으로 변경) 등을 이용해 테스트 가능함. 컨트롤러에 정의된 url 기반으로 테스트.
+
+### Demo 프로젝트: Spring Data Rest
+Spring Data Rest 는 자동으로 데이터베이스와의 인터페이스를 HAL 을 지원하도록 컨트롤러와 리파지토리 설정을 자동으로 함께 해준다.
+먼저 pom.xml 에 다음이 추가 되어야 한다. 추가된 이후에는 프로젝트내 모든 데이터베이스 연결에 영향을 미친다. 필요한 경우 HAL Browser 도 함께 등록해 준다.
+
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-rest</artifactId>
+</dependency>
+```
+- http://localhost:9090 으로 접속하면 접속가능한 리스트가 나옴.
+- profile 로 각 서비스별 제공 가능한 기능 확인.
+- page, size 파라미터르 통해 페이지 단위로 조회 가능함.
+- api_test.http 를 이용해 테스트
 
 ## Spring Study
 ### Spring Basic
