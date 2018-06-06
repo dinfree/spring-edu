@@ -75,7 +75,25 @@ spring.mvc.view.suffix=.jsp
 ```
 
 ### Demo 프로젝트: Spring MVC, Spring Data JPA, H2 - Addrbook
+소스리뷰는 configuration 클래스, entity, dao 클래스, 컨트롤러 순으로 살펴봄.
+#### WebConfiguration
+- @Configuration: 스프링 설정 클래스로 지정. MVC 설정, Security 설정등 설정 어댑터 클래스들이 존재 하며 스프링부트에서는 이들 클래스르 상속받는 커스텀 설정 클래스를 만들게 됨.
+- @Bean: 스프링 빈 객체 생성을 위한 애너테이션. 메서드의 리턴타입의 객체가 스프링빈 객체로 생성되어 컨테이너에 등록됨을 의미함.
 
+#### AddrBook
+엔티티 클래스로 데이터베이스 테이블 구조와 매핑될 수 있도록 멤버필드를 구성하고 getter/setter 메서드를 만들면 됨. lombok 을 이용하면 getter/setter 생략 가능함.
+- @Entity: 데이터를 표현하기 위해 entity 객체임을 알림
+- @Id: 프라이머리키와 매핑될 멤버필드
+- @GeneratedValue: 자동생성된 값으로 관리되기를 원하는 경우
+
+#### AddrBookDAO
+DAO 클래스로 Spring Data JPA 를 사용해 H2 데이터베이스와 연동하는 클래스. 기본적으로 인터페이스만 생성하면 모든 DAO클래스의 메서드는 자동 구성됨. 이경우 제한된 범위에서 기본제공 메서드르 이용해 데이터의 CRUD 기능 사용이 가능하며 몇몇 검색기능도 사용하 수 있음. 만일 복잡한 처리를 해야 한다면 @Query 를 이용해 별도의 검색쿼리를 일부 이용하거나 인터페이스 클래스를 상속해 구현클래스를 만들어 필요한 메서드를 직접 구현하면된다. 그 외 서비스클래스를 정의하거나 컨트롤러에서도 JDBC템플릿등을 만들어 일부 처리할 수 있다. 여기서는 페이지 설정을 위해 수정되는 findAll() 메서드만 별도 정의 하였다.
+- @Repository: 리파지토리(DAO) 클래스임을 알림. 여기서는 JpaRepository 를 상속받는 것으로 함.
+
+#### AddrBookController
+컨트롤러 클래스로 HelloCtl 과 동일함. 추가되는 내용만 살펴보면,
+- @Autowired: 스프링빈 객체를 매핑하기 위한 애너테이션. 여기서는 AddrBookDAO 타입을 abdao 로 매핑하겠다는 것임. AddrBookDAO 인터페이스 타입은 @Repository 애너테이션으로 이미 자동 생성되어 있음.
+- 
 ### Demo 프로젝트: Restful web service
 
 ### Demo 프로젝트: Spring Data Rest with HAL Browser
