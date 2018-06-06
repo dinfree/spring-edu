@@ -28,6 +28,7 @@
 ## Demo Project
 ### import 방법
 * IntelliJ 를 사용함.
+* IntelliJ 플러그인 설정에서 spring boot, data, aop, mvc 등이 선택되어 있는지 확인.
 * github clone으로 프로젝트 import 하는 과정에서 maven project 로 생성 선택.
 * PC에 git이 설치되어 있지 않은 경우 에러 메시지 확인하고 다운로드 및 설치후 다시 시작.
 * 프로젝트 생성 및 maven dependency library 들을 다운로드 할때 까지 대기.
