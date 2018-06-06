@@ -1,0 +1,57 @@
+### Test for simpledata
+
+GET http://localhost:9090/simple/list
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:9090/simple/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:9090/simple/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+    "name":"황희정",
+    "email":"hwanghj@gachon.ac.kr",
+    "tel":"010-1234-1234",
+    "company":"가천대학교",
+    "memo":"컴퓨터공학과 교수",
+    "birth":"1970-10-10"
+}
+
+###
+
+GET http://localhost:9090/simple/delete/6
+
+###
+
+### Test for spring data rest
+GET http://localhost:9090/simpleDatas
+
+###
+
+POST http://localhost:9090/simpleDatas
+Accept: */*
+Content-Type: application/json
+
+{
+    "name":"몰라요",
+    "email":"mola@mola.ac.kr",
+    "tel":"010-1234-1234",
+    "company":"몰라대학교",
+    "memo":"몰라학과 교수",
+    "birth":"1970-10-10"
+}
+
+###
+
+DELETE http://localhost:9090/simpleDatas/4
+
+###

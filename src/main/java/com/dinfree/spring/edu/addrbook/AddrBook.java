@@ -1,5 +1,6 @@
 package com.dinfree.spring.edu.addrbook;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +17,8 @@ public class AddrBook {
 	// 멤버변수 선언
 	@Id
 	@GeneratedValue
-	private int ab_id;
+	@Column(name="ab_id")
+	private int id;
 	private String ab_name;
 	private String ab_email; 
 	private String ab_tel;
@@ -25,10 +27,10 @@ public class AddrBook {
 	private String ab_memo;
 	
 	public int getAb_id() {
-		return ab_id;
+		return id;
 	}
 	public void setAb_id(int ab_id) {
-		this.ab_id = ab_id;
+		this.id = ab_id;
 	}
 	public String getAb_name() {
 		return ab_name;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>RestClient</title>
+    
+    <script>
+        $(function () {
+            function getData(id) {
+                console.log(id);
+                $.getJSON("http://localhost:9090/simple/"+id, function(data) {
+                        $("#name").html(data.name);
+                        $('#email').html(data.email);
+                        $('#company').html(data.company);
+                        $('#tel').html(data.tel);
+                        $('#memo').html(data.memo);
+                    });
+            }
+
+            $('button').click(function (e) {
+                e.preventDefault(); // 매우 중요함. 없으면 데이터 사라짐.
+                getData($('#aid').val());
+            });
+        })
+    </script>
+</head>
+<body>
+<h2>Simple Data Rest Client</h2>
+<hr>
+
+<form>
+    <input type="text" id="aid"> <button>id로 검색</button>
+</form>
+
+<hr>
+이름: <span id="name"> </span> <br>
+이메일: <span id="email"> </span> <br>
+회사명: <span id="company"> </span> <br>
+전화번호: <span id="tel"> </span> <br>
+메모: <span id="memo"> </span><br>
+</body>
+</html>
