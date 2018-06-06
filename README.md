@@ -1,4 +1,4 @@
-## Spring Boot 강의 by dinfree
+# Spring Boot 강의 by dinfree
 > 본 프로젝트는 Spring framework 기초 및 Spring boot, Spring Data JPA, H2 DB 연동 강좌를 위한 예제 프로젝트 입니다.
 > 프로젝트는 계속 업데이트됩니다.
 
@@ -25,7 +25,8 @@
 - [4. Addressbook Project](#addressbook-project)
 
 --------------------------
-### Demo 프로젝트: import 방법
+## Demo Project
+### import 방법
 * IntelliJ 를 사용함.
 * github clone으로 프로젝트 import 하는 과정에서 maven project 로 생성 선택.
 * PC에 git이 설치되어 있지 않은 경우 에러 메시지 확인하고 다운로드 및 설치후 다시 시작.
@@ -50,8 +51,7 @@ spring.datasource.initialize=false
 
 ### Demo 프로젝트: Spring Data Rest with HAL Browser
 
-
-###
+## Spring Study
 ### Spring Basic
 * spring-initializer 를 이용한 스프링 프로젝트 셋팅
 * Eclipse IDE 에서 프로젝트 생성 with pom.xml
@@ -70,7 +70,7 @@ spring.datasource.initialize=false
 * static css 파일은 resource/static/css 아래에 두고 "/css/**.css"로 사용함.
 * view jsp 에서 다른 jsp 를 include 할때 /WEB-INF/jsp/xxx/xxx.jsp 형태로 접근해야 함. 
 
-### H2 Database
+## H2 Database
 * H2 데이터베이스 소개 및 셋팅
 * 콘솔 접속 : http://localhost:8080/console
 * console 접속시 jdbc url 을 jdbc:h2:mem:testdb 와 같이 설정 함. 
@@ -89,7 +89,7 @@ spring.datasource.password=
 spring.datasource.driver-class-name=org.h2.Driver
 ```
 
-### Spring Data JPA
+## Spring Data JPA
 * Spring Data JPA 개념
 * 컴포넌트 클래스를 만들어 Configuration 클래스에서 jpa dao 를 통해 생성하도록 코딩 해도 됨.
 * Spring Data JPA 개념 이해를 위한 SimpleData 예제 작성
