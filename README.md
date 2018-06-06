@@ -46,6 +46,34 @@ server.port=9090
 spring.datasource.initialize=false
 ```
 
+### Demo 프로젝트: Spring MVC
+기본적인 spring mvc 컨트롤러의 동작을 정의하고 확인해봄. 먼저 다음과 같이 동작 테스트.
+```
+http://localhost:9090/hello
+http://localhost:9090/hello?name=YourName
+```
+controller 패키지의 HelloCtl 클래스 소스는 다음과 같음.
+```java
+@Controller
+public class HelloCtl {
+	@GetMapping("/hello")
+	public String hello(@RequestParam(value="name", required=false, defaultValue="HITLAB") String name, Model model){
+        model.addAttribute("name", name);
+        return "hello";
+	}
+}
+```
+- @Controller: 컨트롤러 클래스로 설정함.
+- @GetMapping("/hello"): 지정된 경로에 대한 GET 요청시 실행되는 메서드로 지정.
+- @RequestParam: 클라이언트로 부터 전달되는 Request 파라미터를 처리할때 사용. 만일 전달되는 데이터가 많은 경우 Entity 클래스를 정의하고 해당 Entty 클래스를 메서드의 파라미터로 지정하면 됨.
+- model.addAttribute(): 뷰로 데이터르 전달하기 위해 모델 객체에 데이터를 저장함.
+- return "hello": 리턴되는 문자열은 뷰(여기서는 JSP)의 이름이 됨. 확장자는 쓰지 않고 JSP 경로는 다음과 같이 application.properties 에 지정되어 있음.
+```
+# View Setting
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+```
+
 ### Demo 프로젝트: Spring MVC, Spring Data JPA, H2 - Addrbook
 
 ### Demo 프로젝트: Restful web service
