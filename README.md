@@ -26,10 +26,9 @@
 - [5. Demo Project4 - Spring Data Rest](#demo-spring-data-rest)
 - [6. H2 Database 설정](#h2-database)
 
-
 --------------------------
 ## Demo Project
-### project import
+### Project Import
 * IntelliJ 를 사용함.
 * IntelliJ 플러그인 설정에서 spring boot, data, aop, mvc 등이 선택되어 있는지 확인.
 * github clone으로 프로젝트 import 하는 과정에서 maven project 로 생성 선택.
