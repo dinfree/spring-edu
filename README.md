@@ -93,7 +93,9 @@ DAO 클래스로 Spring Data JPA 를 사용해 H2 데이터베이스와 연동�
 #### AddrBookController
 컨트롤러 클래스로 HelloCtl 과 동일함. 추가되는 내용만 살펴보면,
 - @Autowired: 스프링빈 객체를 매핑하기 위한 애너테이션. 여기서는 AddrBookDAO 타입을 abdao 로 매핑하겠다는 것임. AddrBookDAO 인터페이스 타입은 @Repository 애너테이션으로 이미 자동 생성되어 있음.
-- 
+- @PathVariable: url 경로형태 전달되는 변수값을 받아오기 위한 애너테이션.
+- @PostMapping: HTTP Post 요청(예를들명 form submit)을 처리하기 위한 애너테이션
+
 ### Demo 프로젝트: Restful web service
 
 ### Demo 프로젝트: Spring Data Rest with HAL Browser
