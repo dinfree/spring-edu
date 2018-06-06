@@ -25,7 +25,33 @@
 - [4. Addressbook Project](#addressbook-project)
 
 --------------------------
+### Demo 프로젝트: import 방법
+* IntelliJ 를 사용함.
+* github clone으로 프로젝트 import 하는 과정에서 maven project 로 생성 선택.
+* PC에 git이 설치되어 있지 않은 경우 에러 메시지 확인하고 다운로드 및 설치후 다시 시작.
+* 프로젝트 생성 및 maven dependency library 들을 다운로드 할때 까지 대기.
+* 프로젝트 선택후 Ctrl+Enter 로 Project Structure 화면 진입.
+* SDK 선택이 안되어 있는 경우 확인해서 선택하거나 New 르 이용해 설치되 경로 지정.(JDK 1.8 이상)
+* Modules -> Spring -> + 를 이용해 unmapped module 추가
+* DemoApplication 을 선택후 실행
+* 포트 충돌나는 경우 오라클등을 중지 하거나 application.properties 파일에 다음으 추가
+```
+server.port=9090
+```
+* http://localhost:9090/addrbook/  접속해서 동작 확인
+* 최초 실행후 application.properties 에 다음과 같이 false 설정 
+```
+spring.datasource.initialize=false
+```
 
+### Demo 프로젝트: Spring MVC, Spring Data JPA, H2 - Addrbook
+
+### Demo 프로젝트: Restful web service
+
+### Demo 프로젝트: Spring Data Rest with HAL Browser
+
+
+###
 ### Spring Basic
 * spring-initializer 를 이용한 스프링 프로젝트 셋팅
 * Eclipse IDE 에서 프로젝트 생성 with pom.xml
@@ -67,15 +93,3 @@ spring.datasource.driver-class-name=org.h2.Driver
 * Spring Data JPA 개념
 * 컴포넌트 클래스를 만들어 Configuration 클래스에서 jpa dao 를 통해 생성하도록 코딩 해도 됨.
 * Spring Data JPA 개념 이해를 위한 SimpleData 예제 작성
-	
-### Addressbook Project
-### JSP 버전
-* github clone으로 프로젝트 import 할때 maven project 로 생성함.
-* 기존 교재 주소록 프로젝트의 jsp 를 기본적으로 활용함.
-* 링크 url 정리 필요.
-* JSP 빈즈 사용과 관련된 코드 제거, 기존 컨트롤러 파일 제거 및 컨트롤러 링크 재구성
-* 페이지 네비게이션 추가, pageable 이용함.
-### Thymeleaf 버전
-* jsp 버전을 그대로 활용
-* EL 부분과 JSTL 부분을 수정함.
-* Javascript 처리 부분은 타임리프에 맞게 변경해야 함. 특히 링크 부분은 jQuery 를 활용하는것이 좋아 보임.		
