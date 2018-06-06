@@ -18,15 +18,17 @@
 - H2 Embedded 데이터베이스 설정 및 초기 데이터 로딩
 - 프로젝트 1차 마무리 및 페이지 네비게이션 구현(기존 Thymeleaf 버전을 JSTL 버전으로)
 
-### 강의진행 목차 
-- [1. Spring Basic](#spring-basic)
-- [2. Spring Boot with JSP](#spring-boot-with-jsp)
-- [3. Spring Data JPA](#spring-data-jpa)
-- [4. Addressbook Project](#addressbook-project)
+### 목차 
+- [1. Demo Project Import](#project-import)
+- [2. Demo Project1 - Spring MVC](#demo-spring-mvc)
+- [3. Demo Project2 - AddressBook](#demo-addrbook)
+- [4. Demo Project3 - Restful Web Service](#demo-restful-web-service)
+- [5. Demo Project4 - Spring Data Rest](#demo-spring-data-rest)
+- [6. H2 Database 설정](#h2-database)
 
 --------------------------
 ## Demo Project
-### import 방법
+### Project Import
 * IntelliJ 를 사용함.
 * IntelliJ 플러그인 설정에서 spring boot, data, aop, mvc 등이 선택되어 있는지 확인.
 * github clone으로 프로젝트 import 하는 과정에서 maven project 로 생성 선택.
@@ -46,7 +48,7 @@ server.port=9090
 spring.datasource.initialize=false
 ```
 
-### Demo 프로젝트: Spring MVC
+### DEMO Spring MVC
 기본적인 spring mvc 컨트롤러의 동작을 정의하고 확인해봄. 먼저 다음과 같이 동작 테스트.
 ```
 http://localhost:9090/hello
@@ -74,7 +76,8 @@ spring.mvc.view.prefix=/WEB-INF/jsp/
 spring.mvc.view.suffix=.jsp
 ```
 
-### Demo 프로젝트: Spring MVC, Spring Data JPA, H2 - Addrbook
+### Demo Addrbook
+Spring MVC, Spring Data JPA, H2 datbase 기반으로 기존 주소록 소스로 구성됨.
 소스리뷰는 configuration 클래스, entity, dao 클래스, 컨트롤러 순으로 살펴봄.
 #### WebConfiguration
 - @Configuration: 스프링 설정 클래스로 지정. MVC 설정, Security 설정등 설정 어댑터 클래스들이 존재 하며 스프링부트에서는 이들 클래스르 상속받는 커스텀 설정 클래스를 만들게 됨.
@@ -96,7 +99,7 @@ DAO 클래스로 Spring Data JPA 를 사용해 H2 데이터베이스와 연동�
 - @PathVariable: url 경로형태 전달되는 변수값을 받아오기 위한 애너테이션.
 - @PostMapping: HTTP Post 요청(예를들명 form submit)을 처리하기 위한 애너테이션
 
-### Demo 프로젝트: Restful web service
+### Demo Restful web service
 스프링에서 Restful 웹서비스를 구현하기 위한 방법을 알아 본다. simpledata 패키지의 소스를 보도로 한다.
 
 #### Entity Class
@@ -109,7 +112,7 @@ DAO 클래스로 Spring Data JPA 를 사용해 H2 데이터베이스와 연동�
 #### 동작 테스트
 웹브라우저 혹은 Postman(권장), 내장 HTTP Client(Deprecated 됨. 에디터기반으로 변경) 등을 이용해 테스트 가능함. 컨트롤러에 정의된 url 기반으로 테스트.
 
-### Demo 프로젝트: Spring Data Rest
+### Demo Spring Data Rest
 Spring Data Rest 는 자동으로 데이터베이스와의 인터페이스를 HAL 을 지원하도록 컨트롤러와 리파지토리 설정을 자동으로 함께 해준다.
 먼저 pom.xml 에 다음이 추가 되어야 한다. 추가된 이후에는 프로젝트내 모든 데이터베이스 연결에 영향을 미친다. 필요한 경우 HAL Browser 도 함께 등록해 준다.
 
@@ -124,33 +127,15 @@ Spring Data Rest 는 자동으로 데이터베이스와의 인터페이스를 HA
 - page, size 파라미터르 통해 페이지 단위로 조회 가능함.
 - api_test.http 를 이용해 테스트
 
-## Spring Study
-### Spring Basic
-* spring-initializer 를 이용한 스프링 프로젝트 셋팅
-* Eclipse IDE 에서 프로젝트 생성 with pom.xml
-* 디렉토리 구조 설정
-* 주요 애너테이션
-- @Component, @Bean, @Autowired
-- @Configuration
-- @Controller, @RequestMapping, @RestController, @ResponseBody
-		 
-### Spring Boot with JSP
-* Spring MVC 기본 개념
-* Spring Boot 개념
-* JSP 뷰 사용을 위한 프로퍼티 설정
-* JSP 뷰 동작 HelloWorld 예제 작성
-* Test 코드 작성 - 모델 데이터 점검, 스프링 객체 점검, Rest api 점검, 뷰 리졸버 점검
-* static css 파일은 resource/static/css 아래에 두고 "/css/**.css"로 사용함.
-* view jsp 에서 다른 jsp 를 include 할때 /WEB-INF/jsp/xxx/xxx.jsp 형태로 접근해야 함. 
-
 ## H2 Database
-* H2 데이터베이스 소개 및 셋팅
+* H2 데이터베이스는 스프링에서 기본적으로 사용할 수 있는 내장형 DB로 메모리, 파일, 서버 형태 모두 운영이 가능함.
 * 콘솔 접속 : http://localhost:8080/console
 * console 접속시 jdbc url 을 jdbc:h2:mem:testdb 와 같이 설정 함. 
 * file base 의 경우 jdbc:h2:file:~/testdb 같이 경로 설정을 해주어야 함.
 * 초기 스키마 생성이 필요할 경우 resource/schema.sql 에 create table 작성. 단, 이경우에는 spring.jpa.hibernate.ddl-auto=none 속성 추가필요.
 * 초기 데이터는 resource/data.sql 을 작성하면됨.
 ```
+application.properties
 # initialize=true 인경우 data.sql 로드, false 는 읽지 않음.
 spring.datasource.initialize=true
 spring.jpa.hibernate.ddl-auto=none
@@ -161,8 +146,3 @@ spring.datasource.username=sa
 spring.datasource.password=
 spring.datasource.driver-class-name=org.h2.Driver
 ```
-
-## Spring Data JPA
-* Spring Data JPA 개념
-* 컴포넌트 클래스를 만들어 Configuration 클래스에서 jpa dao 를 통해 생성하도록 코딩 해도 됨.
-* Spring Data JPA 개념 이해를 위한 SimpleData 예제 작성
