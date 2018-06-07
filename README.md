@@ -3,6 +3,7 @@
 > 프로젝트는 계속 업데이트됩니다.
 
 ### TODO List
+- Spring Boot Junit Test 및 웹 테스트 관련 예제 추가.
 - spring 5.0 및 spring boot 1.5 기반으로 업그레이드 해야 함.
 - bootstrap 및 thymleaf 최신 버전으로 수정
 - spring security 를 이용한 기본 인증 처리
@@ -24,7 +25,8 @@
 - [3. Demo Project2 - AddressBook](#demo-addrbook)
 - [4. Demo Project3 - Restful Web Service](#demo-restful-web-service)
 - [5. Demo Project4 - Spring Data Rest](#demo-spring-data-rest)
-- [6. H2 Database 설정](#h2-database)
+- [6. Demo Project5 - Rest Client](#demo-rest-client)
+- [7. H2 Database 설정](#h2-database)
 
 --------------------------
 ## Demo Project
@@ -126,6 +128,13 @@ Spring Data Rest 는 자동으로 데이터베이스와의 인터페이스를 HA
 - profile 로 각 서비스별 제공 가능한 기능 확인.
 - page, size 파라미터르 통해 페이지 단위로 조회 가능함.
 - api_test.http 를 이용해 테스트
+
+### Demo Rest Client
+Restful web service 를 사용하는 클라이언트 개발과 관련된 예제. Spring 에서 제공하는 RestTemplate 을 사용하는 자바 프로그램 예제와 HTML 에서 jQuery 를 이용해 앞에서 개발한 simpledata api 서비스르 사용하는 예제로 구성됨. 각각으 파일 위치는 다음고 같음
+```
+RestTemplate 예제: com.dinfree.spring.edu.restclient.RestClientBike - 공공 데이터 api 중 자전거 사고 현황 조회
+HTML 예제: static/restClient.html
+```
 
 ## H2 Database
 * H2 데이터베이스는 스프링에서 기본적으로 사용할 수 있는 내장형 DB로 메모리, 파일, 서버 형태 모두 운영이 가능함.
