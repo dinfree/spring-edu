@@ -18,7 +18,8 @@
                     });
             }
 
-            $('button').click(function (e) {
+            // jquery 의 새로운 이벤트 모델, $(selector).click() 은 deprecated 됨.
+            $("button").on("click", function (e) {
                 e.preventDefault(); // 매우 중요함. 없으면 데이터 사라짐.
                 getData($('#aid').val());
             });
