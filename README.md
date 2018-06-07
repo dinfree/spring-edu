@@ -3,6 +3,7 @@
 > 프로젝트는 계속 업데이트됩니다.
 
 ### TODO List
+- Spring Boot Junit Test 및 웹 테스트 관련 예제 추가.
 - spring 5.0 및 spring boot 1.5 기반으로 업그레이드 해야 함.
 - bootstrap 및 thymleaf 최신 버전으로 수정
 - spring security 를 이용한 기본 인증 처리
