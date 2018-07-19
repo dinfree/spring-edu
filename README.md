@@ -141,7 +141,7 @@ HTML 예제: static/restClient.html
 * 콘솔 접속 : http://localhost:8080/console
 * console 접속시 jdbc url 을 jdbc:h2:mem:testdb 와 같이 설정 함. 
 * file base 의 경우 jdbc:h2:file:~/testdb 같이 경로 설정을 해주어야 함.
-* 초기 스키마 생성이 필요할 경우 resource/schema.sql 에 create table 작성. 단, 이경우에는 spring.jpa.hibernate.ddl-auto=none 속성 추가필요.
+* 초기 스키마 생성이 필요할 경우 resource/schema.sql.bak 에 create table 작성. 단, 이경우에는 spring.jpa.hibernate.ddl-auto=none 속성 추가필요.
 * 초기 데이터는 resource/data.sql 을 작성하면됨.
 ```
 application.properties

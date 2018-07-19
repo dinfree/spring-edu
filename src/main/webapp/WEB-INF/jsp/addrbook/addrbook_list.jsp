@@ -31,10 +31,10 @@
 			  <tr>
 			   <td><a href="javascript:check(${ab.ab_id})">${ab.ab_id}</a></td>
 				<td>${ab.ab_name}</td>
-				<td>${ab.ab_tel}</td>
-				<td>${ab.ab_birth}</td>
-				<td>${ab.ab_comdept}</td>
-				<td>${ab.ab_memo}</td>
+				<td>${ab.tel}</td>
+				<td>${ab.birth}</td>
+				<td>${ab.comdept}</td>
+				<td>${ab.memo}</td>
 			  </tr>
 			</c:forEach>
 		</table>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>주소록:작성화면</title>
+  <div th:replace="/addrbook/fragments/inc_header"></div>
+</head>
+<body>
+
+<div class="container mt-4">
+<H2>주소록:작성화면 </H2>
+<HR>
+[<a href=/addrbook>주소록 목록으로</a>] <P>
+
+    <form method="post" th:action="@{/addrbook}" th:object="${addrbook}">
+
+    <table class="form">
+      <tr>
+        <th>이 름</th>
+        <td><input class="form-control" type="text" th:field="*{name}" maxlength="15"></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">이름 규격 에러</td></tr>
+      </tr>
+      <tr>
+        <th>email</th>
+        <td><input class="form-control" type="email" th:field="*{email}" maxlength="50"></td>
+        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">이메일 규격 에러</td>
+      </tr>
+      <tr>
+        <th>전화번호</th>
+        <td><input class="form-control" type="text" th:field="*{tel}" maxlength="20"></td>
+        <td th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}">전화번호 규칙에러</td>
+      </tr>
+      <tr>
+        <th>생 일</th>
+        <td><input class="form-control" type="date" th:field="*{birth}"></td>
+        <td th:if="${#fields.hasErrors('birth')}" th:errors="*{birth}">날짜 규칙 에러</td>
+      </tr>
+      <tr>
+        <th>회 사</th>
+        <td><input class="form-control" type="text" th:field="*{comdept}" maxlength="20"></td>
+      </tr>
+      <tr>
+        <th>메 모</th>
+        <td><input class="form-control" type="text" th:field="*{memo}"></td>
+      </tr>
+      <tr>
+        <td colspan=2 align=center><input class="button" type=submit value="저장"><input class="button" type=reset value="취소"></td>
+    </tr>
+    </table>
+</form>
+
+  <ul>
+    <li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
+  </ul>
+</div>
+</body>
+</html>

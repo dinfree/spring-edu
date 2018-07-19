@@ -21,23 +21,23 @@
   </tr>
   <tr>
     <th>email</th>
-    <td><input type="email" name="ab_email" maxlength="50"></td>
+    <td><input type="email" name="email" maxlength="50"></td>
   </tr>
   <tr>
     <th>전화번호</th>
-    <td><input type="text" name="ab_tel" maxlength="20"></td>
+    <td><input type="text" name="tel" maxlength="20"></td>
   </tr>
   <tr>
     <th>생 일</th>
-    <td><input type="date" name="ab_birth"></td>
+    <td><input type="date" name="birth"></td>
   </tr>  
   <tr>
     <th>회 사</th>
-    <td><input type="text" name="ab_comdept" maxlength="20"></td>
+    <td><input type="text" name="comdept" maxlength="20"></td>
   </tr>
   <tr>
     <th>메 모</th>
-    <td><input type="text" name="ab_memo"></td>
+    <td><input type="text" name="memo"></td>
   </tr>
   <tr>
     <td colspan=2 align=center><input type=submit value="저장"><input type=reset value="취소"></td>

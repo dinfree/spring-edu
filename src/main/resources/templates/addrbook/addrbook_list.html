@@ -3,38 +3,39 @@
 <head lang="en">
 
     <title>주소록:목록화면</title>
+	<div th:replace="/addrbook/fragments/inc_header"></div>
 
-    <!--/*/ <th:block th:include="addrbook/fragments/headerinc :: head"></th:block> /*/-->
-    <!-- 타임리프 자바스크립트 처리 해야함. -->
     <script th:inline="javascript">
     /*<![CDATA[*/
-	function check(ab_id) {
+	function check(id) {
 		pwd = prompt('수정/삭제 하려면 비밀번호를 넣으세요');
-		document.location.href="/addrbook/edit/"+ab_id;
+		document.location.href="/addrbook/edit/"+id;
 	}
     /*]]>*/
 </script>
 </head>
 <body>
-<div align="center"> 
+<div class="container mt-4">
 <H2>주소록:목록화면</H2>
 <HR/>
 <form>
 <a href="/addrbook/form">주소록 등록</a><P/>
-		<table border="1">
+		<table class="table table-hover">
+			<thead class="thead-dark">
 			<tr><th>번호</th><th>이 름</th><th>전화번호</th><th>생 일</th><th>회 사</th><th>메 모</th></tr>
+			</thead>
 			  <tr th:each="ab : ${page.content}">
-			   <td><a th:text="${ab.ab_id}" th:onclick="|check(${ab.ab_id})|">ID</a></td>
-				<td th:text="${ab.ab_name}">Name</td>
-				<td th:text="${ab.ab_tel}">Tel</td>
-				<td th:text="${ab.ab_birth}">Birth</td>
-				<td th:text="${ab.ab_comdept}">Dept</td>
-				<td th:text="${ab.ab_memo}">Memo</td>
+			   <td><a th:text="${ab.id}" th:onclick="|check(${ab.id})|">ID</a></td>
+				<td th:text="${ab.name}">Name</td>
+				<td th:text="${ab.tel}">Tel</td>
+				<td th:text="${ab.birth}">Birth</td>
+				<td th:text="${ab.comdept}">Dept</td>
+				<td th:text="${ab.memo}">Memo</td>
 			  </tr>
 		</table>
 </form>
 <BR/>
-        <!--/*/ <th:block th:include="addrbook/fragments/paginationbar :: paginationbar"></th:block> /*/-->
+<div class="text-center" th:replace="/addrbook/fragments/paginationbar :: paginationbar"></div>
 </div>
 
 </body>

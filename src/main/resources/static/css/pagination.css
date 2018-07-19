@@ -1,12 +1,13 @@
+/* 자바스크립트 버전 임시 */
 ul.pagination {
     display: inline-block;
     padding: 0;
     margin: 0;
 }
 
-ul.pagination li {display: inline;}
+ul.pagination li{display: inline;}
 
-ul.pagination li a {
+ul.pagination li a{
     color: black;
     float: left;
     padding: 8px 16px;
@@ -14,6 +15,7 @@ ul.pagination li a {
     transition: background-color .3s;
     border: 1px solid #ddd;
 }
+
 
 ul.pagination li a.active {
     background-color: #4CAF50;

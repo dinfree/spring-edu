@@ -1,6 +1,7 @@
 package com.dinfree.spring.edu.simpledata;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -26,8 +27,8 @@ public class SimpleDBRestCtl {
 	}
 	
 	@GetMapping("/{id}")
-	public SimpleData get(@PathVariable int id) {
-		SimpleData data = sdao.findOne(id);
+	public Optional<SimpleData> get(@PathVariable int id) {
+		Optional<SimpleData> data = sdao.findById(id);
 		return data;
 	}
 	
@@ -39,7 +40,7 @@ public class SimpleDBRestCtl {
 	
 	@GetMapping("/delete/{id}")
 	public String list(@PathVariable int id) {
-		sdao.delete(id);
+		sdao.deleteById(id);
 		return "Deleted";
 	}
 	

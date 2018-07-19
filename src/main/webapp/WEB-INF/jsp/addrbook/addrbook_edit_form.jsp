@@ -33,23 +33,23 @@
   </tr>
   <tr>
     <th>email</th>
-    <td><input type="text" name="ab_email" value="${addrbook.ab_email}"></td>
+    <td><input type="text" name="email" value="${addrbook.email}"></td>
   </tr>
     <tr>
     <th>전화번호</th>
-    <td><input type="text" name="ab_tel" value="${addrbook.ab_tel}"></td>
+    <td><input type="text" name="tel" value="${addrbook.tel}"></td>
   </tr>
       <tr>
     <th>생 일</th>
-    <td><input type="date" name="ab_birth" value="${addrbook.ab_birth}"></td>
+    <td><input type="date" name="birth" value="${addrbook.birth}"></td>
   </tr>
   <tr>
     <th>회 사</th>
-    <td><input type="text" name="ab_comdept" value="${addrbook.ab_comdept}"></td>
+    <td><input type="text" name="comdept" value="${addrbook.comdept}"></td>
   </tr>
   <tr>
     <th>메 모</th>
-    <td><input type="text" name="ab_memo" value="${addrbook.ab_memo}"></td>
+    <td><input type="text" name="memo" value="${addrbook.memo}"></td>
   </tr>
   <tr>
     <td colspan=2 align=center><input type=submit value="저장"><input type=reset value="취소"><input type="button" value="삭제" onClick="delcheck()"></td>
