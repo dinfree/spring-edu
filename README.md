@@ -1,4 +1,7 @@
 # Spring Boot 강의 by dinfree
+[![Dinfree][din-image]][din-url]
+[![License][license-image]][license-url]
+
 > 본 프로젝트는 Spring framework 기초 및 Spring boot, Spring Data JPA, H2 DB 연동 강좌를 위한 예제 프로젝트 입니다.
 > 프로젝트는 계속 업데이트됩니다.
 
@@ -155,3 +158,9 @@ spring.datasource.username=sa
 spring.datasource.password=
 spring.datasource.driver-class-name=org.h2.Driver
 ```
+
+
+[din-image]:https://img.shields.io/badge/dinfree-edu-orange.svg
+[din-url]:https://github.com/dinfree
+[license-image]: https://img.shields.io/npm/l/express.svg?registry_uri=https%3A%2F%2Fregistry.npmjs.com
+[license-url]: https://www.mit.edu/license
